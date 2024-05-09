@@ -1,0 +1,83 @@
+:root {
+    --clr-primary-blue: 246 80% 60%;
+    --clr-dark-blue: 235 46% 20%;
+    --clr-background: 226 43% 10%;
+
+    --clr-work: 15 100% 70%;
+    --clr-play: 195 74% 62%;
+    --clr-study: 348 100% 68%;
+    --clr-exercise: 145 58% 55%;
+    --clr-social: 264 64% 52%;
+    --clr-self-care: 43 84% 65%;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: hsl(var(--clr-background));
+    font-size: 18px;
+}
+
+.nav {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    list-style: none;
+}
+
+.container {
+    /* border: 2px solid red; */
+    margin: 0 1em;
+    position: relative;
+}
+
+.container > * {
+    border-radius: 10px;
+    /* position: absolute; */
+    min-height: 100px;
+}
+
+.top {
+    background-color: #000;
+}
+
+.bottom {
+    background-color: hsl(var(--clr-dark-blue));
+    color: #FFF;
+    position: relative;
+    top: -60px;
+}
+
+.primary > .top {
+    background-color: hsl(var(--clr-primary-blue));
+    position: relative;
+    z-index: 1000;
+}
+
+.work > .top {
+    background-color: hsl(var(--clr-work));
+}
+
+.play > .top {
+    background-color: hsl(var(--clr-play));
+}
+
+.study > .top {
+    background-color: hsl(var(--clr-study));
+}
+
+.exercise > .top {
+    background-color: hsl(var(--clr-exercise));
+}
+
+.social > .top {
+    background-color: hsl(var(--clr-social));
+}
+
+.self-care > .top {
+    background-color: hsl(var(--clr-self-care));
+}

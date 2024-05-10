@@ -6,9 +6,13 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="styles.css">
-  <script defer src="app.js"></script>
+  <script defer src="/app.js" type="module"></script>
   <title>Frontend Mentor | Time tracking dashboard</title>
 
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
@@ -17,74 +21,150 @@
 </head>
 <body>
 
-  <main>
+  <main id="main">
 
     <div class="container primary">
-      <div class="top">
-        <img src="" alt="">
-        <h1>lorem ipsum</h1>
-        <p>lorem ipsum</p>
+      <div class="top primary-top">
+        <img class="profile-picture" src="./images/image-jeremy.png" alt="">
+        <div class="text">
+          <p>Report for</p>
+          <h1>Jeremy Robson</h1>
+        </div>
       </div>
       <div class="bottom">
         <ul class="nav">
-          <li>Daily</li>
-          <li>Weekly</li>
-          <li>Monthly</li>
+          <li>
+            <a href="#">Daily</a>
+          </li>
+          <li>
+            <a href="#">Weekly</a>
+          </li>
+          <li>
+            <a href="#">Monthly</a>
+          </li>
         </ul>
       </div>
     </div>
-    <div class="container work">
+    <div class="container section work">
       <div class="top">
-        <img src="./images/icon-work.svg" alt="briefcase icon">
+        <img class="bg-img" src="./images/icon-work.svg" alt="briefcase icon">
       </div>
       <div class="bottom">
-        <p>lorem ipsum</p>
-        <p>lorem ipsum</p>
+        <span class="label">
+          <p>Work</p>
+          <span class="ellipses">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </span>
+        </span>
+        <span class="time">
+          <p>2hrs</p>
+          <span class="last-week">Last Week - 2hrs</span>
+        </span>
+
       </div>
     </div>
-    <div class="container play">
+    <div class="container section play">
       <div class="top">
-        <img src="./images/icon-play.svg" alt="generic video game controler icon">
+        <img class="bg-img" src="./images/icon-play.svg" alt="generic video game controler icon">
       </div>
       <div class="bottom">
-        <p>lorem ipsum</p>
-        <p>lorem ipsum</p>
+        <span class="label">
+          <p>Play</p>
+          <span class="ellipses">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </span>
+        </span>
+        <span class="time">
+          <p>2hrs</p>
+          <span class="last-week">Last Week - 2hrs</span>
+        </span>
+
       </div>
     </div>
-    <div class="container study">
+    <div class="container section study">
       <div class="top">
-        <img src="./images/icon-study.svg" alt="book icon">
+        <img class="bg-img" src="./images/icon-study.svg" alt="book icon">
       </div>
       <div class="bottom">
-        <p>lorem ipsum</p>
-        <p>lorem ipsum</p>
+        <span class="label">
+          <p>Study</p>
+          <span class="ellipses">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </span>
+        </span>
+        <span class="time">
+          <p>2hrs</p>
+          <span class="last-week">Last Week - 2hrs</span>
+        </span>
+
       </div>
     </div>
-    <div class="container exercise">
+    <div class="container section exercise">
       <div class="top">
-        <img src="./images/icon-exercise.svg" alt="stick figure in running pose rotated 90 degrees so it looks like the arm is on the ground">
+        <img class="bg-img" src="./images/icon-exercise.svg" alt="stick figure in running pose rotated 90 degrees so it looks like the arm is on the ground">
       </div>
       <div class="bottom">
-        <p>lorem ipsum</p>
-        <p>lorem ipsum</p>
+        <span class="label">
+          <p>Exercise</p>
+          <span class="ellipses">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </span>
+        </span>
+        <span class="time">
+          <p>2hrs</p>
+          <span class="last-week">Last Week - 2hrs</span>
+        </span>
+
       </div>
     </div>
-    <div class="container social">
+
+    <div class="container section social">
       <div class="top">
-        <img src="./images/icon-social.svg" alt="chat bubble icon with three dots in the middle">
+        <img class="bg-img" src="./images/icon-social.svg" alt="chat bubble icon with three dots in the middle">
       </div>
       <div class="bottom">
-        <p>lorem ipsum</p>
-        <p>lorem ipsum</p>
+        <span class="label">
+          <p>Social</p>
+          <span class="ellipses">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </span>
+        </span>
+        <span class="time">
+          <p>2hrs</p>
+          <span class="last-week">Last Week - 2hrs</span>
+        </span>
+
       </div>
     </div>
-    <div class="container self-care">
+
+    <div class="container section self-care">
       <div class="top">
-        <img src="./images/icon-self-care.svg" alt="heart icon with a plus sign in the middle">
+        <img class="bg-img" src="./images/icon-self-care.svg" alt="heart icon with a plus sign in the middle">
       </div>
       <div class="bottom">
-        <p>lorem ipsum</p>
-        <p>lorem ipsum</p>
+        <span class="label">
+          <p>Self Care</p>
+          <span class="ellipses">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </span>
+        </span>
+        <span class="time">
+          <p>2hrs</p>
+          <span class="last-week">Last Week - 2hrs</span>
+        </span>
+
       </div>
     </div>
   </main>

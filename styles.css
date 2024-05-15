@@ -17,7 +17,6 @@
     --fw-light: 300;
     --fw-normal: 400;
     --fw-bold: 500;
-
 }
 
 * {
@@ -35,6 +34,23 @@ body {
     color: #FFFFFF;
 }
 
+.nav {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: hsl(var(--clr-link-inactive));
+}
+
+a:hover {
+    cursor: pointer;
+    color: #FFF;
+}
+
 .main {
     margin: 2em auto;
     display: grid;
@@ -46,11 +62,161 @@ body {
 .container {
     width: 327px;
     height: 203px;
-    background: red;
+    border-radius: 10px;
+    margin: 1em;
 }
 
-.primary {
-    background-color: greenyellow;
+.work {
+    background-color: hsl(var(--clr-work));
+}
+
+.play {
+    background-color: hsl(var(--clr-play));
+}
+
+.study {
+    background-color: hsl(var(--clr-study));
+}
+
+.exercise {
+    background-color: hsl(var(--clr-exercise));
+}
+
+.social {
+    background-color: hsl(var(--clr-social));
+}
+
+.self-care {
+    background-color: hsl(var(--clr-self-care));
+}
+
+.primary-top > h1 {
+    font-weight: var(--fw-light);
+}
+
+.profile-picture {
+    width: 64px;
+    height: 64px;
+    border: 5px solid #FFF;
+    border-radius: 50%;
+}
+
+.tracking-container > .top {
+    display: flex;
+    justify-content: end;
+}
+
+.section > .bottom {
+    padding: 1em;
+}
+
+.primary-bottom {
+    display: flex;
+    justify-content: space-around;
+}
+
+.primary > .bottom > ul > li {
+    margin: 1.5em;
+}
+
+.primary-top {
+    margin: 1em auto;
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background-color: hsl(var(--clr-primary-blue));
+    position: relative;
+    z-index: 100000;
+    border-radius: 10px;
+}
+
+.primary-top > h1 {
+    font-weight: var(--fw-light);
+}
+
+.profile-picture {
+    width: 64px;
+    height: 64px;
+    border: 5px solid #FFF;
+    border-radius: 50%;
+}
+
+.tracking-top {
+    height: 100px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.bottom {
+    background-color: hsl(var(--clr-dark-blue));
+    position: relative;
+    top: -60px;
+    width: 327px;
+    height: 122px;
+    border-radius: 10px;
+    z-index: 10000;
+}
+
+.tracking-container > .bottom {
+    padding: 2em;
+}
+
+.primary-bottom {
+    position: relative;
+    top: -70px;
+}
+
+.bg-img {
+    position: relative;
+    right: 0;
+    width: 78px;
+    height: 78px;
+}
+
+.text > p {
+    font-size: 0.9375rem;
+    color: hsl(var(--clr-text-light));
+}
+
+.text > h1 {
+    font-size: 1.5rem;
+    font-weight: var(--fw-light);
+}
+
+.label,
+.time {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.label {
+    font-weight: var(--fw-bold);
+    font-size: 1.125rem;
+    padding-block-end: .25em;
+}
+
+.time {
+    font-size: 2rem;
+    font-weight: var(--fw-light);
+}
+
+.last-week {
+    font-size: 0.9375rem;
+    color: hsl(var(--clr-text-light))
+}
+
+.ellipses {
+    display: flex;
+}
+
+.dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: hsl(var(--clr-text-light));
+    margin-inline: .05em;
 }
 
 @media (min-width: 1440px) {
@@ -60,16 +226,67 @@ body {
         margin: 2em 15em;
     }
 
-    
     .container {
         width: 255px;
-        height: 249px;
+        /* height: 249px; */
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-block-start: 1.25em;
     }
     
     .primary {
         grid-row: span 2;
-        height: 100%;
+        height: 518px;
     }
-    .tracking-container {
+
+    .primary-top {
+        padding-block: 2em 4em;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .primary-bottom {
+        width: 100%;
+        min-height: 200px;
+        justify-content: start;
+        align-items: center;
+        padding-inline-start: 1.5em;
+        top: -50px;
+    }
+
+    .primary > .bottom > ul > li {
+        margin: .5em;
+    }
+
+    .profile-picture {
+        width: 78px;
+        height: 78px;
+    }
+
+    .text {
+        margin-block: 1em;
+    }
+
+    .text > h1 {
+        font-size: 40px;
+    }
+
+    .tracking-container > .bottom {
+        width: 255px;
+        height: 199px;
+        border-radius: 10px;
+    }
+
+    .time {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .time > p {
+        font-size: 56px;
+        padding-block-start: .25em;
     }
 }

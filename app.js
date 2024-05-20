@@ -1,13 +1,22 @@
-import data from './data.json' assert { type: 'json'};
-const section = document.querySelectorAll('.section');
-const main = document.getElementById('main');
+const links = document.querySelectorAll('.nav-link');
+console.log(typeof links);
 
-const appendItem = (item) => {
-    const section = document.createElement('section');
-    <span>${item.title}</span>
-    main.appendChild(section)
-};
+for (const link of links) {
+    link.addEventListener('click', handleClick);
+}
 
-data.forEach((item) => {
-    appendItem(item);
-});
+function handleClick() {
+    console.log('clicked!');
+}
+
+// fetch('/data.json').then((request) => {  
+//     if(!request.ok) {
+//       console.log('Oops! Something went wrong.');
+//       return null;
+//     }
+    
+//     return request.json();
+//   }).then((data) => {
+//     console.log(data);
+//     console.log(data[0]);
+//   });

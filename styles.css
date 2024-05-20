@@ -51,6 +51,10 @@ a:hover {
     color: #FFF;
 }
 
+.nav-link[data-clicked=true] {
+    color: #FFF;
+}
+
 .main {
     margin: 2em auto;
     display: grid;
@@ -115,7 +119,7 @@ a:hover {
     justify-content: space-around;
 }
 
-.primary > .bottom > ul > li {
+.nav > a {
     margin: 1.5em;
 }
 
@@ -236,6 +240,7 @@ a:hover {
         align-items: flex-start;
         padding-block-start: 1.25em;
     }
+
     
     .primary {
         grid-row: span 2;
@@ -257,7 +262,7 @@ a:hover {
         top: -50px;
     }
 
-    .primary > .bottom > ul > li {
+    .nav > a {
         margin: .5em;
     }
 

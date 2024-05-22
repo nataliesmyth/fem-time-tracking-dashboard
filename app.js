@@ -4,15 +4,13 @@ const prevTimeFrame = ['Yesterday', 'Last Week', 'Last Month'];
 const cards = document.querySelectorAll('.tracking-card');
 let currentTimeFrame = document.getElementById('daily');
 
-console.log(timeFrameTabs)
+currentTimeFrame.style.color = '#FFF';
 
 async function handleClick(timeFrameNo) {
     try {
         const response = await fetch('data.json');
         const data = await response.json();
         for (let i = 0; i < 6; i++) {
-            console.log('data[i]', data[i].timeframes.timeFrameName)
-            console.log('cards[i]', cards[i])
             const currTime = data[i].timeframes[timeFrameName[timeFrameNo]].current;
             const prevTime = data[i].timeframes[timeFrameName[timeFrameNo]].previous;
             cards[i].querySelector('.current-time').textContent = currTime + ((currTime > 1) ? 'hrs': 'hr');
@@ -24,10 +22,7 @@ async function handleClick(timeFrameNo) {
     }
 }
 
-console.log(timeFrameTabs)
-
 timeFrameTabs.forEach((e) => {
-    console.log(e.dataset.index);
     e.addEventListener('click', function() {
         currentTimeFrame.style.color = 'hsl(235, 45%, 61%)';
         currentTimeFrame = e;
@@ -36,4 +31,4 @@ timeFrameTabs.forEach((e) => {
     });
 });
 
-handleClick(0);
+handleClick(timeFrameTabs[0].dataset.index);

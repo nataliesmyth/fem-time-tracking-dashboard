@@ -1,22 +1,39 @@
-const links = document.querySelectorAll('.nav-link');
-console.log(typeof links);
+const timeFrameTabs = document.querySelectorAll('.nav-link');
+const timeFrameName = ['daily', 'weekly', 'monthly'];
+const prevTimeFrame = ['Yesterday', 'Last Week', 'Last Month'];
+const cards = document.querySelectorAll('.tracking-card');
+let currentTimeFrame = document.getElementById('daily');
 
-for (const link of links) {
-    link.addEventListener('click', handleClick);
+console.log(timeFrameTabs)
+
+async function handleClick(timeFrameNo) {
+    try {
+        const response = await fetch('data.json');
+        const data = await response.json();
+        for (let i = 0; i < 6; i++) {
+            console.log('data[i]', data[i].timeframes.timeFrameName)
+            console.log('cards[i]', cards[i])
+            const currTime = data[i].timeframes[timeFrameName[timeFrameNo]].current;
+            const prevTime = data[i].timeframes[timeFrameName[timeFrameNo]].previous;
+            cards[i].querySelector('.current-time').textContent = currTime + ((currTime > 1) ? 'hrs': 'hr');
+            cards[i].querySelector('.previous-time').textContent = prevTimeFrame[timeFrameNo] + ' - ' + prevTime + ((prevTime > 1) ? 'hrs': 'hr');
+        }
+    }
+    catch(e) {
+        console.error(e);
+    }
 }
 
-function handleClick() {
-    console.log('clicked!');
-}
+console.log(timeFrameTabs)
 
-// fetch('/data.json').then((request) => {  
-//     if(!request.ok) {
-//       console.log('Oops! Something went wrong.');
-//       return null;
-//     }
-    
-//     return request.json();
-//   }).then((data) => {
-//     console.log(data);
-//     console.log(data[0]);
-//   });
+timeFrameTabs.forEach((e) => {
+    console.log(e.dataset.index);
+    e.addEventListener('click', function() {
+        currentTimeFrame.style.color = 'hsl(235, 45%, 61%)';
+        currentTimeFrame = e;
+        e.style.color = 'white';
+        handleClick(e.dataset.index);
+    });
+});
+
+handleClick(0);
